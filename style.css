@@ -9,6 +9,29 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   
+  .heading {
+    position: relative;
+  }
+  
+  .heading span::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #000000, #FF0000);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+  }
+  
+  .heading:hover span::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+
   :root {
     --bg-color: #0b0b0b;
     --second-bg-color: #f90505;
@@ -43,7 +66,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    --bg-color: #ffffff;
+    --bg-color: #000000;
   }
   
   @media (max-width: 768px) {
@@ -70,6 +93,13 @@
     margin-left: 4rem;
   }
   
+  /* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+  }
+}
+
   .navbar a::after {
     content: "";
     position: absolute;
@@ -102,8 +132,8 @@
   }
   
   .home-img img {
-    width: 50vw;
-    height: 50vw;
+    width: 35vw;
+    height: 35vw;
     margin-left: 0rem;
     border-radius: 10%;
     transition: transform 0.5s;
@@ -214,6 +244,11 @@
   
   .achievements {
     background: var(--bg-color);
+    background-image: url('mall.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
   }
   
   .achievements h2 {
@@ -239,6 +274,14 @@
   .achievements-box img {
     width: 100%;
     transition: 0.5s ease;
+  }
+
+  @media (max-width: 768px) {
+    .achievements-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
   }
   
   .achievements-box:hover img {
@@ -276,11 +319,21 @@
   }
   
   .news {
-    background: var(--second-bg-color);
+    background: var(--bg-color);
+
+    background-image: url('logopubgm.jpeg'), url('logo-mobile-legend.jpeg');
+    background-size: auto, auto; /* Menyusun ukuran gambar sesuai aslinya */
+    background-repeat: no-repeat, no-repeat; /* Mencegah gambar diulang */
+    
+    /* Mengatur posisi gambar di tampilan desktop */
+    background-position: left, right;
+
+    @media (max-width: 768px) {
+      background-position: center bottom, center bottom;
   }
-  
-  
-  
+}
+
+
   .footer {
     display: flex;
     justify-content: space-between;
