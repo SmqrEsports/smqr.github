@@ -123,6 +123,8 @@
     color: var(--text-color);
     display: none;
   }
+
+  
   
   .home {
     display: flex;
@@ -250,6 +252,13 @@
     background-attachment: fixed;
     background-position: center;
   }
+
+  @media (max-width: 768px) {
+    .achievements {
+      background-attachment: scroll;
+      background-size: center;
+    }
+  }
   
   /* Mobile Styles */
 @media (max-width: 768px) {
@@ -359,34 +368,41 @@
 }
 
 
+.footer {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap; /* Memastikan kontennya dapat bungkus di bawah saat perangkat mobile */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-sponsor {
+  flex: 1; /* Diberikan ruang yang sama dengan elemen lainnya */
+  text-align: center;
+}
+
+.footer-sponsor img {
+  max-width: 100px;
+  height: auto;
+  left: auto;
+}
+
+.footer-text {
+  flex: 2; /* Diberikan ruang yang lebih besar */
+  text-align: center;
+}
+
+.footer-iconTop {
+  flex: 1; /* Diberikan ruang yang sama dengan elemen lainnya */
+  text-align: center;
+}
+
+/* Media queries untuk membuat footer menjadi mobile responsive */
+@media (max-width: 768px) {
   .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem 9%;
-    background: var(--bg-color);
+    flex-direction: column; /* Mengatur elemen menjadi satu kolom */
   }
-  
-  .footer-text p {
-    font-size: 1.3rem;
-    margin-left: 45rem;
-  }
-  
-  .footer-iconTop a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.8rem;
-    background: var(--main-color);
-    border-radius: 0.8rem;
-    transition: 0.5 ease;
-  }
-  
-  .footer-iconTop a:hover {
-    box-shadow: 0 0 1rem var(--main-color);
-  }
-  .footer-iconTop a i {
-    font-size: 2.4rem;
-    color: var(--bg-color);
-  }
+}

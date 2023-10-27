@@ -15,15 +15,13 @@
   <body>
     <!-- header desain -->
     <header class="header">
-        <a href="#" class="logo">
-          <img src="./smqr logo merah.jpeg" alt="SMQR Esports" width="110px" height="110px" />
-        </a>
+        <img src="./smqr logo merah.jpeg" alt="SMQR Esports" width="110px" height="110px" />
         <body style="background: linear-gradient(to right, #000000, rgb(255, 0, 0));">
         <nav class="navbar">
-          <a href="#home">Home</a>
-          <a href="#commitment"><span>Commitment</span></a>
-          <a href="#achievements">Achievements<span></span></a>
-          <a href="#news"><span>News</span></a>
+          <a href="#home">HOME</a>
+          <a href="#commitment"><span>COMMITMENT</span></a>
+          <a href="#achievements">ACHIEVEMENTS<span></span></a>
+          <a href="#news"><span>NEWS</span></a>
         </nav>
       
         <i class="bx bx-menu" id="menu-icon"></i>
@@ -41,7 +39,15 @@
         <div class="social-media">
           <a href="https://www.instagram.com/smqresports"><i class="bx bxl-instagram"></i></a>
           <a href="https://l.instagram.com/?u=https%3A%2F%2Fdiscord.com%2Finvite%2FYm5cCEb&e=AT3kLMKyMnwzyGHOzZWUV2163UcB1tiJZrpffzO6qNu47vG1Hl4Aa8aJuML8rlDkt2a2oJe1NRG0Uxut7e-J-UxftDxOkftJsfWPrDpu81tVyoceb7iMnH3E-D-9kUaApMglt-MbH6jfLsNgtcxxDLw"><i class="bx bxl-discord-alt"></i></a>
+          <style>
+            .bx.bxl-instagram {
+              color: #ff00d9; /* Warna biru Instagram */
+            }
           
+            .bx.bxl-discord-alt {
+              color: #5865F2; /* Warna ungu Discord */
+            }
+          </style>
         </div>
       </div>
       <div class="home-img">
@@ -50,32 +56,48 @@
     </section>
 
     <!-- achievments section design -->
-    <section class="" id="commitment">
+  
+    <style>
+      .commitment-img {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    
+      .commitment-img img {
+        width: 300px;
+        height: 200px;
+        margin: 10px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+
+    <section class="" id="commitment" style="background: linear-gradient(to right, #ff0000, #000000)">
       <div class="commitment-img">
         <img src="./Bersama PJ Bupati OKU 2022-2024.jpeg" alt="" width="300" height="200"/>
         <img src="./Penyelenggaraan tournament 1.jpeg" alt="" width="300" height="200"/>
         <img src="./Penyelenggaraan tournament 2.jpeg" alt="" width="300" height="200"/>
         <img src="./Penyelenggaraan tournament 2a.jpeg" alt="" width="300" height="200"/>
-        <img src="./Penyelenggaraan tournament 3.jpeg" alt="" width="300" height="200"/>
         <img src="./bakti sosial smqr.jpeg" alt="" width="300" height="200"/>
-        <img src="./moba.jpeg" alt="" width="300" height="200"/>
-        <img src="./Penyelenggaraan tournament 2b.jpeg" alt="" width="300" height="200"/>
+        <img src="./Penyelenggaraan tournament 3.jpeg" alt="" width="300" height="200"/>
       </div>
 
       <div class="about-content">
-        <h1 class="heading">Commitment</h1>
-        <h3><span>SMQR Esports</span></h3>
+        <h1 class="heading">COMMITMENT </h1>
+        <h3><span></span></h3>
         <p>
            Komitmen kami adalah untuk terus mendukung dan memajukan komunitas Esports dengan fokus pada pembinaan bakat-bakat muda. Kami secara aktif terlibat dalam penyelenggaraan Tournament Esports yang tidak hanya mendorong prestasi, tetapi juga mendukung visi pemerintah dalam memajukan industri Esports.
         </p>
-        <a href="#" class="btn">Klik IG atau Discord untuk Bergabung</a>
+        <a href="#" class="btn" style="color: #000000;">Klik IG atau Discord untuk Bergabung</a>
       </div>
     </section>
 
     <!-- achievements section design -->
     <section class="achievements" id="achievements"  >
       <h2 class="heading">
-        <span style=" color: rgb(255, 255, 255); padding: 10px;">Achievements</span>
+        <span style=" color: rgb(255, 255, 255); padding: 10px;">ACHIEVEMENTS</span>
     </h2>
       <div class="achievements-container">
         <div class="achievements-box">
@@ -145,9 +167,9 @@
 
     </section>
     <section class="news" id="news">
-      <h2 class="heading" style="margin-bottom: 20px;">NEWS</h2>
-        <h1 style="color: rgb(255, 0, 0); font-size: 30px;">DIVISI FPS</h1>
-        <h3 style="color: rgb(248, 248, 248); font-size: 24px;">OPEN RECRUITMENT</h3>
+      <h2 class="heading" style="margin-bottom: 20px;"><span>NEWS</span></h2>
+        <h1 style="color: rgb(255, 255, 255); font-size: 30px;">DIVISI FPS</h1>
+        <h3 style="color: rgb(248, 248, 248); font-size: 20px;"><span>OPEN RECRUITMENT</span></h3>
         <ul>
           <li style="text-shadow: 2px 2px 2px rgb(255, 0, 0); font-weight: bold; font-size: 18px;">Kami membutuhkan 4 Player PUBG Mobile yang Kompetitif lahir antara tahun 1999 dan 2011.</li>
           <li style="text-shadow: 2px 2px 2px rgb(255, 0, 0); font-weight: bold; font-size: 18px;">Siap Bekerja Sama dengan Manajemen dan Bertanggung Jawab Terhadap Tournament yang didaftarkan.</li>
@@ -156,10 +178,11 @@
       </ul>
       
         <a href="https://www.instagram.com/smqresports">
-            <i class="bx bxl-instagram" style="color: rgb(255, 0, 0); font-size: 48px;"></i>
+            <i class="bx bxl-instagram" style="color: rgb(255, 0, 221); font-size: 48px;"></i>
         </a>
-    <section class="kepengurusan" id="kepengurusan"></section>
+
         
+    <section class="kepengurusan" id="kepengurusan"></section>   
     <style>
       .image-container {
         text-align: center; /* Menempatkan gambar di tengah */
@@ -172,25 +195,28 @@
       }
     </style>
     </section>
-    <h2 class="heading" style="margin-bottom: 20px;">"Hall of Fame"
-    <h3 style="color: rgb(248, 248, 248); font-size: 15px; text-align: center;">Sejarah Kepengurusan SMQR Esports dari masa ke masa</h3>
-    <div class="image-container">
-      <img src="./smqrpengurus.jpeg" alt="Gambar Pengurus SMQR">
+    <div class="heading" style="margin-bottom: 20px; background-image: url('./first.jpeg'); background-size: cover;">
+      <h2 style="color: rgb(248, 248, 248); font-size: 30px; text-align: center; background: rgba(0, 0, 0, 0.5);">"HALL OF FAME"</h2>
+      <h3 style="color: rgb(248, 248, 248); font-size: 15px; text-align: center; background: rgba(0, 0, 0, 0.5);">Sejarah Kepengurusan SMQR Esports dari masa ke masa</h3>
+      <img src="./smqrpengurus.jpeg" alt="pengurus smqr"style="max-width: 100%; height: auto;">
     </div>
 
 
     <!-- footer design -->
-    <footer class="footer" style="background-color: #000000; color: #fff; padding: 20px; text-align: center; display: flex; justify-content: space-between; align-items: center;">
-        <div class="footer-sponsor">
-          <img src="./Angkringan Skuy.jpeg" alt="Logo Sponsor" style="max-width: 100px; height: auto;">
-        </div>
-        <div class="footer-text">
-          <p>Copyright CV Biru Langit &copy; 2023</p>
-        </div>
-        <div class="footer-iconTop">
-          <a href="#home" style="color: #fff; text-decoration: none;"><i class="bx bx-up-arrow-alt"></i></a>
-        </div>
-      </footer>
-      
+    <footer class="footer" style="background: linear-gradient(to right, #fb0000, #000000)">
+      <div class="footer-sponsor">
+        <img src="./Angkringan Skuy.jpeg" alt="Logo Sponsor">
+      </div>
+      <div class="footer-text">
+        <p>Copyright CV Biru Langit &copy; 2023</p>
+      </div>
+      <div class="footer-iconTop">
+        <p> #majulahsmqr </p>
+        <a href="#home" style="color: #000000; text-decoration: none; position: relative;">
+          <i class="bx bx-up-arrow-alt" style="background-color: #fff; border-radius: 50%; padding: 15px;"></i>
+        </a>
+      </div>
+    </footer>
+
   </body>
 </html>
