@@ -16,73 +16,119 @@
     <!-- header desain -->
     <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SMQR Esports</title>
-  <style>
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px;
-      background-color: #f1f1f1;
-    }
-    .navbar {
-      display: flex;
-      gap: 20px;
-    }
-    .navbar a {
-      color: #000000;
-      text-decoration: none;
-      padding: 10px;
-    }
-    .navbar a:hover {
-      background-color: #ddd;
-    }
-    body {
-      background: linear-gradient(to right, #ffffff, rgb(255, 255, 255));
-    }
-    #menu-icon {
-      font-size: 24px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-
-  <header class="header">
-    <img src="./smqr logo merah.jpeg" alt="SMQR Esports" width="110px" height="110px" />
-    <nav class="navbar" id="navbar"></nav>
-    <i class="bx bx-menu" id="menu-icon"></i>
-  </header>
-
-  <script>
-    // Data menu items
-    const menuItems = [
-      { text: 'HOME', href: '#home' },
-      { text: 'COMMITMENT', href: '#commitment' },
-      { text: 'ACHIEVEMENTS', href: '#achievements' },
-      { text: 'SMQR EVENT', href: '#event' },
-      { text: 'TEAMS', href: '#teams' },
-      { text: 'NEWS', href: '#news' }
-    ];
-
-    // Menambahkan menu secara otomatis ke dalam navbar
-    const navbar = document.getElementById('navbar');
-    menuItems.forEach(item => {
-      const anchor = document.createElement('a');
-      anchor.href = item.href;
-      anchor.textContent = item.text;
-
-      const span = document.createElement('span');
-      anchor.appendChild(span);
-
-      navbar.appendChild(anchor);
-    });
-  </script>
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMQR Esports</title>
+    <style>
+      /* Gaya header dan navbar */
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #f1f1f1;
+      }
+      
+      .navbar {
+        display: flex;
+        gap: 20px;
+      }
+      
+      .navbar a {
+        color: #000000;
+        text-decoration: none;
+        padding: 10px;
+      }
+  
+      .navbar a:hover {
+        background-color: #ddd;
+      }
+  
+      /* Untuk mobile, sembunyikan menu dan buat agar dapat swipe */
+      @media (max-width: 768px) {
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 200px;
+          height: 100vh;
+          background-color: #333;
+          flex-direction: column;
+          gap: 0;
+          padding-top: 60px;
+          transition: 0.3s;
+        }
+  
+        .navbar.active {
+          left: 0;
+        }
+  
+        .navbar a {
+          padding: 15px;
+          border-bottom: 1px solid #fff;
+          color: #fff;
+          width: 100%;
+          text-align: center;
+        }
+  
+        #menu-icon {
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+  
+      /* Gaya umum untuk background */
+      body {
+        background: linear-gradient(to right, #ffffff, rgb(255, 255, 255));
+      }
+  
+    </style>
+  </head>
+  <body>
+  
+    <header class="header">
+      <img src="./smqr logo merah.jpeg" alt="SMQR Esports" width="110px" height="110px" />
+      <nav class="navbar" id="navbar"></nav>
+      <i class="bx bx-menu" id="menu-icon">☰</i>
+    </header>
+  
+    <script>
+      // Data menu items
+      const menuItems = [
+        { text: 'HOME', href: '#home' },
+        { text: 'COMMITMENT', href: '#commitment' },
+        { text: 'ACHIEVEMENTS', href: '#achievements' },
+        { text: 'SMQR EVENT', href: '#event' },
+        { text: 'TEAMS', href: '#teams' },
+        { text: 'NEWS', href: '#news' }
+      ];
+  
+      // Menambahkan menu secara otomatis ke dalam navbar
+      const navbar = document.getElementById('navbar');
+      menuItems.forEach(item => {
+        const anchor = document.createElement('a');
+        anchor.href = item.href;
+        anchor.textContent = item.text;
+        navbar.appendChild(anchor);
+      });
+  
+      // Mengaktifkan toggle menu di mobile
+      const menuIcon = document.getElementById('menu-icon');
+      menuIcon.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+  
+      // Menutup navbar saat swipe di luar menu
+      window.addEventListener('click', function(event) {
+        if (!event.target.matches('#menu-icon') && !navbar.contains(event.target)) {
+          navbar.classList.remove('active');
+        }
+      });
+    </script>
+  
+  </body>
+  
 </html>
     <!-- home section design -->
     <section class="home" id="home">
