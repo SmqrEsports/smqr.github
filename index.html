@@ -14,21 +14,76 @@
   </head>
   <body>
     <!-- header desain -->
-    <header class="header">
-        <img src="./smqr logo merah.jpeg" alt="SMQR Esports" width="110px" height="110px" />
-        <body style="background: linear-gradient(to right, #ffffff, rgb(255, 255, 255));">
-        <nav class="navbar">
-          <a href="#home">HOME</a>
-          <a href="#commitment"><span>COMMITMENT</span></a>
-          <a href="#achievements">ACHIEVEMENTS<span></span></a>
-          <a href="#event"><span>SMQR EVENT</span></a>
-          <a href="#teams">TEAMS</a>
-          <a href="#news"><span>NEWS</span></a>
-        </nav>
-      
-        <i class="bx bx-menu" id="menu-icon"></i>
-      </header>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMQR Esports</title>
+  <style>
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #f1f1f1;
+    }
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+    .navbar a {
+      color: #000000;
+      text-decoration: none;
+      padding: 10px;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+    }
+    body {
+      background: linear-gradient(to right, #ffffff, rgb(255, 255, 255));
+    }
+    #menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
 
+  <header class="header">
+    <img src="./smqr logo merah.jpeg" alt="SMQR Esports" width="110px" height="110px" />
+    <nav class="navbar" id="navbar"></nav>
+    <i class="bx bx-menu" id="menu-icon"></i>
+  </header>
+
+  <script>
+    // Data menu items
+    const menuItems = [
+      { text: 'HOME', href: '#home' },
+      { text: 'COMMITMENT', href: '#commitment' },
+      { text: 'ACHIEVEMENTS', href: '#achievements' },
+      { text: 'SMQR EVENT', href: '#event' },
+      { text: 'TEAMS', href: '#teams' },
+      { text: 'NEWS', href: '#news' }
+    ];
+
+    // Menambahkan menu secara otomatis ke dalam navbar
+    const navbar = document.getElementById('navbar');
+    menuItems.forEach(item => {
+      const anchor = document.createElement('a');
+      anchor.href = item.href;
+      anchor.textContent = item.text;
+
+      const span = document.createElement('span');
+      anchor.appendChild(span);
+
+      navbar.appendChild(anchor);
+    });
+  </script>
+
+</body>
+</html>
     <!-- home section design -->
     <section class="home" id="home">
       <div class="home-content">
@@ -43,11 +98,11 @@
           <a href="https://l.instagram.com/?u=https%3A%2F%2Fdiscord.com%2Finvite%2FYm5cCEb&e=AT3kLMKyMnwzyGHOzZWUV2163UcB1tiJZrpffzO6qNu47vG1Hl4Aa8aJuML8rlDkt2a2oJe1NRG0Uxut7e-J-UxftDxOkftJsfWPrDpu81tVyoceb7iMnH3E-D-9kUaApMglt-MbH6jfLsNgtcxxDLw"><i class="bx bxl-discord-alt"></i></a>
           <style>
             .bx.bxl-instagram {
-              color: #ff00d9; /* Warna biru Instagram */
+              color: #ff00d9; 
             }
           
             .bx.bxl-discord-alt {
-              color: #5865F2; /* Warna ungu Discord */
+              color: #5865F2; 
             }
           </style>
         </div>
@@ -71,17 +126,17 @@
         width: 300px;
         height: 200px;
         margin: 10px;
-        border: 2px solid #ddd;
+        border: 2px solid #fd0101;
         border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 5px rgba(255, 251, 251, 0.2);
       }
     </style>
     
     <section class="" id="commitment" style="background: linear-gradient(to right, #ffffff, #000000)">
       <div>
-        <h2 class="heading">
-        <span style=" color: rgb(255, 255, 255); padding: 10px;">COMMITMENT</span>
-    </h2>
+        <h2 class="heading" style="margin-bottom: 20px; background: linear-gradient(to right, #000000, #f90000);">
+        <span style="color: rgb(254, 254, 254);">COMMITMENT</span>
+      </h2>
       </div>
       <div class="commitment-img">
         <img src="./Bersama PJ Bupati OKU 2022-2024.jpeg" alt="" width="300" height="200"/>
@@ -90,6 +145,9 @@
         <img src="./Penyelenggaraan tournament 2a.jpeg" alt="" width="300" height="200"/>
         <img src="./bakti sosial smqr.jpeg" alt="" width="300" height="200"/>
         <img src="./Penyelenggaraan tournament 3.jpeg" alt="" width="300" height="200"/>
+        <img src="./Juara 1 Pak tias.jpeg" alt="" width="300" height="200"/>
+        <img src="./bertaji cup.jpeg" alt="" width="300" height="200"/>
+        <img src="./show.jpeg" alt="" width="300" height="200"/>
       </div>
 
       <div class="about-content">
@@ -102,9 +160,9 @@
 
     <!-- achievements section design -->
     <section class="achievements" id="achievements"  >
-      <h2 class="heading">
-        <span style=" color: rgb(255, 255, 255); padding: 10px;">ACHIEVEMENTS</span>
-    </h2>
+      <h2 class="heading" style="margin-bottom: 20px; background: linear-gradient(to right, #000000, #f90000);">
+        <span style="color: rgb(254, 254, 254);">ACHIEVEMENTS</span>
+      </h2>
       <div class="achievements-container">
         <div class="achievements-box">
           <img src="./trans7.jpeg" alt="" />
@@ -174,17 +232,19 @@
     </section >
 
     <section class="event" id="event">
-      <h2 class="heading" style="margin-bottom: 20px;"><span style="color: rgb(255, 252, 252);">SMQR EVENT</span></h2>
+      <h2 class="heading" style="margin-bottom: 20px; background: linear-gradient(to right, #000000, #f90000);">
+        <span style="color: rgb(254, 254, 254);">SMQR EVENTS</span>
+      </h2>
        
-      <div class="about-content">
-        <p style="color: rgb(255, 255, 255); font-weight: bold;">
+      <!-- <div class="about-content">
+        <p style="color: rgb(255, 0, 0); font-weight: bold;">
            Majukan Dunia Esports Indonesia dengan Membuat Tournament
         </p>
-        <p style="color: rgb(255, 254, 254); font-weight: bold;">
+        <p style="color: rgb(255, 0, 0); font-weight: bold;">
           <Span>SMQR Esports</Span> hadir dengan visi besar untuk memajukan industri esports Indonesia! Kami berkomitmen untuk membuka kesempatan bagi para talenta muda dengan menyelenggarakan berbagai turnamen esports berkualitas, dari level amatir hingga profesional. Ini adalah kesempatan emas bagi para gamers yang ingin menunjukkan kemampuan, memperluas jaringan, dan meraih impian mereka berkembang di dunia esports!
        </p>
        
-      </div>
+      </div> -->
 
       <div class="event-img">
         <img src="./TOUR 1.jpeg" alt="" style="max-width: 40%; height: auto; display: inline-block; border-radius: 20px;"/>
@@ -214,7 +274,9 @@
     </section>
 
     <section class="teams" id="teams">
-      <h2 class="heading" style="color: white; padding: 10px; text-align: center; font-weight: bold;">MEET OUR TEAMS</h2>
+     <h2 class="heading" style="margin-bottom: 20px; background: linear-gradient(to right, #000000, #f90000);">
+        <span style="color: rgb(254, 254, 254);">MEET OUR TEAMS</span>
+      </h2>
       <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
         <div style="text-align: center; flex: 1; margin: 10px;">
           <img src="./SMQR ESPORTS.jpeg" alt="SMQR Esports" width="200" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: auto;">
@@ -243,15 +305,18 @@
     </section>
 
     <section class="news" id="news">
-      <h2 class="heading" style="margin-bottom: 20px;"><span style="color: black;">FEATURED NEWS</span></h2>
+      <h2 class="heading" style="margin-bottom: 20px; background: linear-gradient(to right, #000000, #f90000);">
+        <span style="color: rgb(254, 254, 254);">FEATURED NEWS</span>
+      </h2>
+      
       
       <h1 style="color: black; font-size: 20px; font-weight: bold;"><span>OPEN RECRUITMENT</span></h1>
       <h1 style="color: rgb(0, 0, 0); font-size: 30px; font-weight: bold;">DIVISI FPS</h1>
       <ul>
-        <li style="color: rgb(4, 4, 4); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.5);">Kami membutuhkan 4 Player PUBG Mobile yang Kompetitif lahir antara tahun 2000 dan 2012.</li>
-        <li style="color: rgb(1, 1, 1); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.5);">Siap Bekerja Sama dengan Manajemen dan Bertanggung Jawab Terhadap Tournament yang didaftarkan.</li>
-        <li style="color: rgb(3, 3, 3); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.5);">KD minimal 3.00 dan Akun minimal lv 60 </li>
-        <li style="color: rgb(0, 0, 0); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 0, 0, 0.5);">Untuk informasi lebih lanjut seperti Benefits dll, silahkan DM Instagram dengan mengklik tautan berikut:</li>
+        <li style="color: rgb(4, 4, 4); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(253, 253, 253, 0.5);">Kami membutuhkan 4 Player PUBG Mobile yang Kompetitif lahir antara tahun 2000 dan 2012.</li>
+        <li style="color: rgb(1, 1, 1); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 254, 254, 0.5);">Siap Bekerja Sama dengan Manajemen dan Bertanggung Jawab Terhadap Tournament yang didaftarkan.</li>
+        <li style="color: rgb(3, 3, 3); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);">KD minimal 3.00 dan Akun minimal lv 60 </li>
+        <li style="color: rgb(0, 0, 0); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);">Untuk informasi lebih lanjut seperti Benefits dll, silahkan DM Instagram dengan mengklik tautan berikut:</li>
       </ul>
       
       <a href="https://www.instagram.com/smqresports">
@@ -280,9 +345,9 @@
     </section>
     
     <div class="heading" style="margin-bottom: 20px; background-image: url('./first.jpeg'); background-size: cover;">
-      <h2 class="heading">
-        <span style=" color: rgb(255, 255, 255); padding: 10px;">HALL OF FAME</span>
-    </h2>
+      <h2 class="heading" style="margin-bottom: 20px; background: linear-gradient(to right, #000000, #f90000);">
+        <span style="color: rgb(254, 254, 254);">HALL OF FAME</span>
+      </h2>
       <h3 style="color: rgb(248, 248, 248); font-size: 15px; text-align: center; background: rgba(0, 0, 0, 0.5);">Sejarah Kepengurusan SMQR Esports dari masa ke masa</h3>
       <img src="./smqrpengurus.jpeg" alt="pengurus smqr"style="max-width: 100%; height: auto;">
     </div>
