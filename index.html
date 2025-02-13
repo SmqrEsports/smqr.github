@@ -87,19 +87,41 @@
   
   <body>
     <header class="header">
-      <img src="./smqr logo merah.jpeg" alt="SMQR Esports" width="50px" height="50px" />
-    
-      
-    
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <a style="color: rgb(0, 0, 0); margin-right: 10px;">
+          didukung oleh : 
+        </a>
+        <script>
+          let logos = [
+            "./Angkringan Skuy.jpeg",
+            "./desapedia.jpeg",
+            "./floriglitz.jpeg"
+          ];
+          let logoIndex = 0;
+          let logoElement = document.createElement("img");
+          logoElement.style.width = "50px";
+          logoElement.style.height = "50px";
+          logoElement.style.borderRadius = "50%";
+          logoElement.style.display = "block";
+          document.querySelector("div").appendChild(logoElement);
+
+          setInterval(() => {
+            logoElement.src = logos[logoIndex];
+            logoIndex = (logoIndex + 1) % logos.length;
+          }, 3000);
+        </script>
+      </div>
       
       
         <div class="menu">
+          
           <a href="#home" class="menu-item" style="color: #ff0000; font-weight: bold; margin-left: 10px; margin-bottom: 10px;">Home</a>
           <a href="#commitment" class="menu-item" style="color: #fe0000; font-weight: bold; margin-left: 10px; margin-bottom: 10px;">Commitment</a>
           <a href="#achievements" class="menu-item" style="color: #ff0000; font-weight: bold; margin-left: 10px; margin-bottom: 10px;">Achievements</a>
           <a href="#event" class="menu-item" style="color: #ff0000; font-weight: bold; margin-left: 10px; margin-bottom: 10px;">Events</a>
           <a href="#teams" class="menu-item" style="color: #ff0000; font-weight: bold; margin-left: 10px; margin-bottom: 10px;">Teams</a>
           <a href="#news" class="menu-item" style="color: #ff0000; font-weight: bold; margin-left: 10px; margin-bottom: 10px;">News</a>
+          <img src="./smqr logo merah.jpeg" alt="SMQR Esports" width="50px" height="50px" />
         </div>
     
       
@@ -178,7 +200,7 @@
 
       <div class="about-content">
         <p style="color: rgb(255, 254, 254); font-weight: bold;">
-           <span>Komitmen kami adalah untuk terus mendukung dan memajukan komunitas Esports </span> dengan fokus pada pembinaan bakat-bakat muda. Kami secara aktif terlibat <span>dalam penyelenggaraan Tournament Esports yang tidak hanya mendorong prestasi</span>, tetapi juga mendukung visi pemerintah dalam memajukan industri Esports.
+           <span>Komitmen kami adalah untuk terus mendukung dan memajukan komunitas Esports </span> dengan fokus pada pembinaan bakat-bakat muda. Kami secara aktif terlibat dalam penyelenggaraan Tournament Esports yang tidak hanya mendorong <span style="color: black; font-weight: bold;">prestasi tetapi juga mendukung visi pemerintah dalam memajukan industri Esports</span>.
         </p>
         <a href="#" class="btn" style="color: #ffffff;">Klik IG atau Discord untuk Bergabung</a>
       </div>
@@ -193,14 +215,14 @@
         <div class="achievements-box">
           <img src="./trans7.jpeg" alt="" />
           <div class="achievements-layer">
-            <h1>Tournament Nasional FPS Trans 7 Esports</h1>
+            <h1>Tournament Nasional Battle Royal Trans 7 Esports</h1>
           </div>
         </div>
 
         <div class="achievements-box">
           <img src="./tribunsumsel.jpeg" alt="" />
           <div class="achievements-layer">
-            <h1>Tournament ESPORTS 2020 FPS Gubernur Provinsi Sumatera Selatan</h1>
+            <h1>Tournament ESPORTS 2020 Battle Royal Gubernur Provinsi Sumatera Selatan</h1>
           </div>
         </div>
 
@@ -219,9 +241,9 @@
           </div>
 
         <div class="achievements-box">
-            <img src="./ganjarfps1.jpeg" alt="" />
+            <img src="./ganjarBattle Royal1.jpeg" alt="" />
             <div class="achievements-layer">
-              <h1>Juara 1 FPS Tournament Ganjar Pranowo Kab Lahat Provinsi Sumatera Selatan</h1>
+              <h1>Juara 1 Battle Royal Tournament Ganjar Pranowo Kab Lahat Provinsi Sumatera Selatan</h1>
             </div>
           </div>
 
@@ -235,7 +257,7 @@
           <div class="achievements-box">
             <img src="./26, 1 200223 offline.jpeg" alt="" />
             <div class="achievements-layer">
-              <h1>Juara 1 FPS Tournament PELSA Kota Palembang</h1>
+              <h1>Juara 1 Battle Royal Tournament PELSA Kota Palembang</h1>
             </div>
           </div>
 
@@ -308,7 +330,7 @@
           <img src="./SMQR ESPORTS.jpeg" alt="SMQR Esports" width="200" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: auto;">
           <div style="margin-top: 10px;">
             <p style="font-size: 20px; color: white; font-weight: bold;">SMQR Esports</p>
-            <p style="font-size: 20px; color: rgb(255, 255, 255); margin-top: 5px; font-weight: bold;">Divisi FPS</p>
+            <p style="font-size: 20px; color: rgb(255, 255, 255); margin-top: 5px; font-weight: bold;">Divisi Battle Royal</p>
           </div>
         </div>
         
@@ -337,23 +359,22 @@
       
       
       <h1 style="color: black; font-size: 20px; font-weight: bold;"><span>OPEN RECRUITMENT</span></h1>
-      <h1 style="color: rgb(0, 0, 0); font-size: 30px; font-weight: bold;">DIVISI FPS</h1>
+      <h1 style="color: rgb(0, 0, 0); font-size: 30px; font-weight: bold;">DIVISI BATTLE ROYAL</h1>
+      <h3 style="color: rgb(0, 0, 0); font-size: 30px; font-weight: bold;">PUBG Mobile</h3>
       <ul>
-        <li style="color: rgb(4, 4, 4); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(253, 253, 253, 0.5);">Kami membutuhkan 4 Player PUBG Mobile yang Kompetitif lahir antara tahun 2000 dan 2012.</li>
+        <li style="color: rgb(4, 4, 4); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(253, 253, 253, 0.5);">Kami membutuhkan 4 Player PUBG Mobile yang Kompetitif lahir antara tahun 2001 dan 2013.</li>
         <li style="color: rgb(1, 1, 1); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 254, 254, 0.5);">Siap Bekerja Sama dengan Manajemen dan Bertanggung Jawab Terhadap Tournament yang didaftarkan.</li>
         <li style="color: rgb(3, 3, 3); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);">KD minimal 3.00 dan Akun minimal lv 60 </li>
         <li style="color: rgb(0, 0, 0); font-weight: bold; font-size: 18px; text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);">Untuk informasi lebih lanjut seperti Benefits dll, silahkan DM Instagram dengan mengklik tautan berikut:</li>
       </ul>
       
-      <a href="https://www.instagram.com/smqresports">
-        <i class="bx bxl-instagram" style="color: rgb(255, 0, 221); font-size: 48px;"></i>
+      <a href="https://www.instagram.com/smqresports" style="font-size: 24px;">@smqresports</a>
       </a>
       
       <div style="margin-top: 20px;">
         <h1 style="color: black; font-size: 20px; font-weight: bold;"><span>OPEN PARTNERSHIP</span></h1>
         <h2 style="color: black; font-size: 20px; font-weight: bold;">
-          Dengan prestasi gemilang dan visi misi yang kuat, SMQR Esports membuka peluang bagi Sponsor(Partners) untuk bergabung dan bekerjasama melalui DM IG: @smqresports <a href="https://www.instagram.com/smqresports">
-            <i class="bx bxl-instagram" style="color: rgb(255, 0, 221); font-size: 48px;"></i>
+          Dengan prestasi gemilang dan visi misi yang kuat, SMQR Esports membuka peluang bagi Sponsor(Partners) untuk bergabung dan bekerjasama melalui DM IG: <a href="https://www.instagram.com/smqresports">@smqresports</a>  
           </a>. Jalinlah kemitraan dan Tumbuh Berkembang bersama kami di Dunia Esports.        </h2>
       </div>
       
@@ -382,17 +403,25 @@
     <!-- footer design -->
     <footer class="footer" style="background: linear-gradient(to right, #fafafa, #ffffff)">
       <div class="footer-sponsor">
-        <h1  style="background: linear-gradient(to right, #ffffff, #000000)">
         <h1 style="color: black;">Partners</h1>
-        <img src="./Angkringan Skuy.jpeg" alt="Logo Sponsor" style="max-width: 100px; height: auto">
+        <a href="https://www.instagram.com/angkringanskuy">
+          <img src="./Angkringan Skuy.jpeg" alt="Logo Sponsor" style="max-width: 100px; height: auto; border-radius: 50%;">
+        </a>
+        <a href="https://www.instagram.com/desapedia.official">
+          <img src="./desapedia.jpeg" alt="Logo Sponsor" style="max-width: 100px; height: auto; border-radius: 50%;">
+        </a>
+        <a href="https://www.instagram.com/flori.glitz">
+          <img src="./floriglitz.jpeg" alt="Logo Sponsor" style="max-width: 100px; height: auto; border-radius: 50%;">
+        </a>
       </div>
+        
       <div class="footer-text">
         <p style="color: black;">Website Resmi SMQR Esports &copy; 2019</p>
       </div>
         
       </div>
       <div class="footer-iconTop" style="background: linear-gradient(to right, #ffffff, #000000)">
-        <h1 style="color: black;"> #majulahsmqr </h1>
+        <h1 style="color: rgb(255, 0, 0);"> majulahsmqr </h1>
         <a href="#home" style="color: #000000; text-decoration: none; position: relative;">
           <i class="bx bx-up-arrow-alt" style="background-color: #fd0000; border-radius: 50%; padding: 15px;"></i>
         </a>
