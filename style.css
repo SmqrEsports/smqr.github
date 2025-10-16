@@ -15,7 +15,7 @@ html, body {
   background: linear-gradient(120deg, #181818 0%, #ff0000 100%);
   color: var(--light);
   min-height: 100vh;
-  scroll-behavior: smooth;
+ 
 }
 body {
   background-attachment: fixed;
@@ -51,45 +51,176 @@ body {
   letter-spacing: 2px;
   text-shadow: 0 2px 8px #0008;
 }
+/* === Sponsor Section === */
 .sponsor-logos {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-left: 20px;
+  justify-content: center;
+  gap: 15px; /* jarak antar item */
+  flex-wrap: wrap; /* agar responsif */
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
 }
-.sponsor-logos img {
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--primary);
-  background: #fff;
-  box-shadow: 0 2px 8px #0004;
-  transition: transform 0.3s;
+
+.sponsor-title {
+  font-weight: bold;
+  color: #ffcc00;
 }
-.sponsor-logos img:hover {
-  transform: scale(1.15) rotate(-6deg);
-}
-.navbar {
-  display: flex;
-  gap: 2vw;
-  align-items: center;
-}
-.navbar a {
-  color: var(--light);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 8px 18px;
-  border-radius: 30px;
-  transition: background 0.2s, color 0.2s;
-  background: transparent;
-}
-.navbar a:hover,
-.navbar a.active {
-  background: var(--primary);
+
+.scroll-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #fff;
-  box-shadow: 0 2px 12px #ff000088;
+  font-size: 10px; /* 🔹 ukuran ikon lebih kecil */
+  padding: 02px; /* 🔹 tombol lebih mungil */
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  cursor: pointer;
 }
+
+.scroll-top:hover {
+  background: rgba(59, 59, 152, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 18px rgba(59, 59, 152, 0.4);
+}
+
+
+.sponsor-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sponsor-item img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: white;
+  object-fit: cover;
+}
+
+.sponsor-item span {
+  color: white;
+  font-size: 14px;
+}
+
+/* Tombol hamburger */
+.hamburger {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 1002;
+}
+
+/* Navbar: slide dari kanan */
+.navbar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: right 0.4s ease;
+  z-index: 1001;
+  padding-top: 60px;
+}
+
+.navbar.show {
+  right: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+/* Tombol X */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 35px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sponsor Section */
+.sponsor-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.sponsor-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.sponsor-item img {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: white;
+  object-fit: cover;
+}
+
+/* Sembunyikan sponsor di desktop */
+@media (min-width: 769px) {
+  .navbar {
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    height: auto;
+    width: auto;
+    right: 0;
+    transition: none;
+    padding: 0;
+  }
+
+  .navbar a {
+    color: white;
+    padding: 10px 15px;
+  }
+
+  .hamburger,
+  .close-btn {
+    display: none;
+  }
+
+  
+}
+
 
 /* Hero */
 .home {
@@ -414,14 +545,14 @@ body {
   margin-bottom: 10px;
 }
 .footer-iconTop a {
-  color: #fff;
+  color: #000000;
   background: var(--primary);
   border-radius: 50%;
   padding: 15px;
   font-size: 2rem;
   display: inline-block;
   transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px #ff000044;
+  box-shadow: 0 2px 8px #00000044;
 }
 .footer-iconTop a:hover {
   background: #fff;
@@ -524,17 +655,7 @@ body {
     gap: 10px;
     padding: 0.5rem 2vw;
   }
-  .navbar {
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 0.95rem;
-    padding-bottom: 8px;
-  }
-  .navbar a {
-    padding: 7px 10px;
-    font-size: 0.95rem;
-  }
+ 
   .home-content h1 { font-size: 2rem; }
   .footer { padding: 30px 2vw 10px; }
   .event-img {

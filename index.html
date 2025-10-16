@@ -18,32 +18,75 @@
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="logo">
-        <img
-          src="favicon.png"
-          alt="SMQR"
-          style="
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #fff;
-          "
-        />
-        SMQR Esports
-        <div class="sponsor-logos">
-          <img src="./desapedia.jpeg" alt="Desapedia" />
-          <img src="./floriglitz.jpeg" alt="Floriglitz" />
-        </div>
-      </div>
-      <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#commitment">Commitment</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#event">Events</a>
-        <a href="#teams">Teams</a>
-        <a href="#news">News</a>
-      </nav>
-    </header>
+  <div class="logo">
+    <img
+      src="favicon.png"
+      alt="SMQR"
+      style="width: 38px; height: 38px; border-radius: 50%; background: #fff;"
+    />
+    <span>SMQR Esports</span>
+    
+
+  </div>
+  <div class="maju">
+    <span>Website Resmi SMQR Esports &copy; 2019</span>
+     
+    </div>
+    
+
+  <!-- Tombol hamburger -->
+<button id="hamburger" class="hamburger">&#9776;</button>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <button id="closeBtn" class="close-btn">&times;</button>
+
+  <div class="sponsor-logos">
+    <span class="sponsor-title">Partners:</span>
+
+    <div class="sponsor-item">
+      <img src="./desapedia.jpeg" alt="Desapedia" />
+      <span>Desapedia</span>
+    </div>
+
+    <div class="sponsor-item">
+      <img src="./floriglitz.jpeg" alt="Floriglitz" />
+      <span>Floriglitz</span>
+    </div>
+  </div>
+
+  <a href="#home" class="active">Home</a>
+  <a href="#commitment">Commitment</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#event">Events</a>
+  <a href="#teams">Teams</a>
+  <a href="#news">News</a>
+</nav>
+
+
+
+</header>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navbar = document.getElementById("navbar");
+  const closeBtn = document.getElementById("closeBtn");
+
+  // Tombol hamburger: toggle buka/tutup menu
+  hamburger.addEventListener("click", () => {
+    navbar.classList.toggle("show");
+  });
+
+  // Tombol X: tutup menu
+  closeBtn.addEventListener("click", () => {
+    navbar.classList.remove("show");
+  });
+</script>
+
+
+
+
+
 
     <!-- Home Section -->
     <section
@@ -105,9 +148,7 @@
             ></a>
           </div>
         </div>
-        <div class="home-img">
-          <img src="./2023 depan.jpg" alt="SMQR Esports Team" />
-        </div>
+       
       </div>
     </section>
 
@@ -128,7 +169,7 @@
         "
       ></div>
       <div style="position: relative; z-index: 2">
-        <h2 class="heading">COMMITMENT</h2>
+        <h2 class="heading">COMMITMENT SMQR Esports</h2>
         <div
           class="commitment-img"
           style="
@@ -195,7 +236,7 @@
 
     <!-- Achievements Section -->
     <section class="achievements" id="achievements">
-      <h2 class="heading">ACHIEVEMENTS</h2>
+      <h2 class="heading">ACHIEVEMENTS SMQR Esports</h2>
       <div class="achievements-container">
         <div class="achievements-box">
           <img src="./trans7.jpeg" alt="Trans 7 Esports" />
@@ -256,6 +297,12 @@
             Selatan
           </div>
         </div>
+        <div class="achievements-box">
+          <img src="./liga32025.jpeg" alt="Ganjar MOBA" />
+          <div class="achievements-layer">
+            Babak 16 Besar Ronde 1 Liga 3 Esports Nasional MOBA Tahun 2025
+          </div>
+        </div>
       </div>
     </section>
 
@@ -270,7 +317,7 @@
       "
     >
       <h2 class="heading" style="position: relative; z-index: 2">
-        SMQR EVENTS
+        EVENTS SMQR Esports
       </h2>
       <div class="event-img" style="position: relative; z-index: 2">
         <div class="img-container" data-year="2022">
@@ -344,7 +391,7 @@
       id="teams"
       style="position: relative; overflow: hidden"
     >
-      <h2 class="heading" style="position: relative; z-index: 2">TEAMS</h2>
+      <h2 class="heading" style="position: relative; z-index: 2">TEAMS SMQR Esports</h2>
       <!-- Video background -->
       <video
         autoplay
@@ -416,7 +463,7 @@
           text-shadow: 1px 1px 2px #fc0000, -1px -1px 2px #fff;
         "
       >
-        NEWS
+        NEWS SMQR Esports
       </h2>
       <div
         class="recruitment-container"
@@ -555,47 +602,61 @@
     <footer class="footer">
       <div class="footer-sponsor">
         <h1 style="color: #ffffff">Partners</h1>
+        <h2 style="color: #ffffff">#majulahsmqr</h2>
+        
+      </div>
+      <div class="footer-sponsor">
+        
         <a href="https://www.instagram.com/desapedia.official">
           <img src="./desapedia.jpeg" alt="Desapedia" />
+          <h3 style="color: #ffffff">Desapedia</h3>
         </a>
-        <a href="https://www.instagram.com/flori.glitz">
+        
+      <div class="footer-sponsor">
+        
+        <a href="https://www.instagram.com/floriglitz.id">
           <img src="./floriglitz.jpeg" alt="Floriglitz" />
+          <h3 style="color: #ffffff">Floriglitz</h3>
         </a>
-      </div>
-      <div class="footer-text" style="color: #ffffff">
-        Website Resmi SMQR Esports &copy; 2019
-      </div>
+      
       <div class="footer-iconTop" style="color: #ffffff">
-        <h1 style="color: #ffffff">majulahsmqr</h1>
-        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+        
+       <a href="#home" class="scroll-top"> 
+ <i class="bx bx-chevron-up"></i>
+</a>
+
+
       </div>
     </footer>
 
-    <script>
-      // Zoom gambar event SMQR dengan double click
-      function zoomImage(img) {
-        // Hapus zoom lain jika ada
-        document
-          .querySelectorAll(".img-container.zoomed")
-          .forEach(function (z) {
-            z.classList.remove("zoomed");
-          });
-        // Zoom container
-        var container = img.closest(".img-container");-container");
-        container.classList.add("zoomed");iner.classList.add("zoomed");
-        // Tutup zoom jika klik di luar gambara klik di luar gambar
-        function closeZoom(e) {
-          if (!container.contains(e.target)) {)) {
-            container.classList.remove("zoomed");");
-            document.removeEventListener("mousedown", closeZoom);tListener("mousedown", closeZoom);
-            document.removeEventListener("touchstart", closeZoom);hstart", closeZoom);
-          }
-        }
-        setTimeout(function () {
-          document.addEventListener("mousedown", closeZoom);ocument.addEventListener("mousedown", closeZoom);
-          document.addEventListener("touchstart", closeZoom); document.addEventListener("touchstart", closeZoom);
-        }, 10);
+   <script>
+  // Zoom gambar event SMQR dengan double click
+  function zoomImage(img) {
+    // Hapus zoom lain jika ada
+    document.querySelectorAll(".img-container.zoomed").forEach(function (z) {
+      z.classList.remove("zoomed");
+    });
+
+    // Zoom container
+    var container = img.closest(".img-container");
+    container.classList.add("zoomed");
+
+    // Tutup zoom jika klik di luar gambar
+    function closeZoom(e) {
+      if (!container.contains(e.target)) {
+        container.classList.remove("zoomed");
+        document.removeEventListener("mousedown", closeZoom);
+        document.removeEventListener("touchstart", closeZoom);
       }
-    </script>
+    }
+
+    // Tambahkan event listener untuk menutup zoom
+    setTimeout(function () {
+      document.addEventListener("mousedown", closeZoom);
+      document.addEventListener("touchstart", closeZoom);
+    }, 10);
+  }
+</script>
+
   </body>
 </html>
