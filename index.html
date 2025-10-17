@@ -18,75 +18,70 @@
   <body>
     <!-- Header -->
     <header class="header">
-  <div class="logo">
-    <img
-      src="favicon.png"
-      alt="SMQR"
-      style="width: 38px; height: 38px; border-radius: 50%; background: #fff;"
-    />
-    <span>SMQR Esports</span>
-    
+      <div class="logo">
+        <img
+          src="favicon.png"
+          alt="SMQR"
+          style="
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #fff;
+          "
+        />
+        <span>SMQR Esports</span>
+      </div>
+      <div class="maju"></div>
 
-  </div>
-  <div class="maju">
-    <span>Website Resmi SMQR Esports &copy; 2019</span>
-     
-    </div>
-    
+      <!-- Tombol hamburger -->
+      <button id="hamburger" class="hamburger">&#9776;</button>
 
-  <!-- Tombol hamburger -->
-<button id="hamburger" class="hamburger">&#9776;</button>
+      <!-- Navbar -->
+      <nav class="navbar" id="navbar">
+        <span style="font-size: 11px; color: #ccc; letter-spacing: 0.5px">
+          Website Resmi SMQR Esports &copy; 2019
+        </span>
 
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <button id="closeBtn" class="close-btn">&times;</button>
+        <a href="#achievements">Achievements</a>
+        <a href="#commitment">Commitment</a>
+        <a href="#event">Events</a>
+        <a href="#halloffame">Hall of Fame</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
 
-  <div class="sponsor-logos">
-    <span class="sponsor-title">Partners:</span>
+        <a href="#teams">Teams</a>
 
-    <div class="sponsor-item">
-      <img src="./desapedia.jpeg" alt="Desapedia" />
-      <span>Desapedia</span>
-    </div>
+        <div class="sponsor-logos">
+          <span class="sponsor-title">Partners:</span>
 
-    <div class="sponsor-item">
-      <img src="./floriglitz.jpeg" alt="Floriglitz" />
-      <span>Floriglitz</span>
-    </div>
-  </div>
+          <div class="sponsor-item">
+            <img src="./desapedia.jpeg" alt="Desapedia" />
+            <span>Desapedia</span>
+          </div>
 
-  <a href="#home" class="active">Home</a>
-  <a href="#commitment">Commitment</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#event">Events</a>
-  <a href="#teams">Teams</a>
-  <a href="#news">News</a>
-</nav>
+          <div class="sponsor-item">
+            <img src="./floriglitz.jpeg" alt="Floriglitz" />
+            <span>Floriglitz</span>
+          </div>
+        </div>
+      </nav>
+    </header>
 
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navbar = document.getElementById("navbar");
+      const closeBtn = document.getElementById("closeBtn");
 
+      // Tombol hamburger: toggle buka/tutup menu
+      hamburger.addEventListener("click", () => {
+        navbar.classList.toggle("show");
+      });
 
-</header>
-
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navbar = document.getElementById("navbar");
-  const closeBtn = document.getElementById("closeBtn");
-
-  // Tombol hamburger: toggle buka/tutup menu
-  hamburger.addEventListener("click", () => {
-    navbar.classList.toggle("show");
-  });
-
-  // Tombol X: tutup menu
-  closeBtn.addEventListener("click", () => {
-    navbar.classList.remove("show");
-  });
-</script>
-
-
-
-
-
+      // Tombol X: tutup menu
+      closeBtn.addEventListener("click", () => {
+        navbar.classList.remove("show");
+      });
+    </script>
 
     <!-- Home Section -->
     <section
@@ -148,7 +143,6 @@
             ></a>
           </div>
         </div>
-       
       </div>
     </section>
 
@@ -168,80 +162,268 @@
           z-index: 1;
         "
       ></div>
-      <div style="position: relative; z-index: 2">
-        <h2 class="heading">COMMITMENT SMQR Esports</h2>
+      <div
+        style="
+          position: relative;
+          z-index: 2;
+          padding: 60px 20px;
+          text-align: center;
+          background: url('./mall.jpeg') center/cover no-repeat;
+          border-radius: 20px;
+          overflow: hidden;
+        "
+      >
         <div
-          class="commitment-img"
           style="
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+
+            z-index: 1;
           "
-        >
-          <img
-            src="./Bersama PJ Bupati OKU 2022-2024.jpeg"
-            alt=""
-            width="220"
-            height="140"
-          />
-          <img
-            src="./Penyelenggaraan tournament 1.jpeg"
-            alt=""
-            width="220"
-            height="140"
-          />
-          <img
-            src="./Penyelenggaraan tournament 2.jpeg"
-            alt=""
-            width="220"
-            height="140"
-          />
-          <img
-            src="./Penyelenggaraan tournament 2a.jpeg"
-            alt=""
-            width="220"
-            height="140"
-          />
-          <img src="./bakti sosial smqr.jpeg" alt="" width="220" height="140" />
-          <img
-            src="./Penyelenggaraan tournament 3.jpeg"
-            alt=""
-            width="220"
-            height="140"
-          />
-          <img src="./Juara 1 Pak tias.jpeg" alt="" width="220" height="140" />
-          <img src="./bertaji cup.jpeg" alt="" width="220" height="140" />
-          <img src="./show.jpeg" alt="" width="220" height="140" />
-        </div>
-        <div
-          class="about-content"
-          style="max-width: 700px; margin: 30px auto 0 auto; text-align: center"
-        >
-          <p style="color: #fff; font-weight: 600">
-            Komitmen kami adalah untuk terus mendukung dan memajukan komunitas
-            Esports dengan fokus pada pembinaan bakat-bakat muda. Kami secara
-            aktif terlibat dalam penyelenggaraan Tournament Esports yang tidak
-            hanya mendorong prestasi tetapi juga mendukung visi pemerintah dalam
-            memajukan industri Esports.
-          </p>
-          <a
-            href="https://www.instagram.com/smqresports"
-            class="recruitment-button"
-            >Klik IG untuk Bergabung</a
+        ></div>
+
+        <div style="position: relative; z-index: 2">
+          <h2
+            style="
+              color: #fff;
+              font-size: 2rem;
+              font-weight: 800;
+              letter-spacing: 1px;
+              margin-bottom: 30px;
+              text-transform: uppercase;
+              text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            "
           >
+            COMMITMENT SMQR Esports
+          </h2>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+              gap: 12px;
+              justify-items: center;
+              align-items: center;
+              width: 100%;
+              max-width: 900px;
+              margin: 0 auto;
+            "
+          >
+            <img
+              src="./Bersama PJ Bupati OKU 2022-2024.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+            <img
+              src="./Penyelenggaraan tournament 1.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+            <img
+              src="./Penyelenggaraan tournament 2.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+            <img
+              src="./Penyelenggaraan tournament 2a.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+            <img
+              src="./bakti sosial smqr.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+            <img
+              src="./Penyelenggaraan tournament 3.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+            <img
+              src="./Juara 1 Pak tias.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+            <img
+              src="./bertaji cup.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+            <img
+              src="./show.jpeg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+          </div>
+
+          <div
+            style="
+              max-width: 700px;
+              margin: 40px auto 0;
+              color: #f0f0f0;
+              font-weight: 500;
+              line-height: 1.6;
+              font-size: 1rem;
+            "
+          >
+            <p style="margin-bottom: 30px">
+              Komitmen kami adalah untuk terus mendukung dan memajukan komunitas
+              Esports dengan fokus pada pembinaan bakat-bakat muda. Kami secara
+              aktif terlibat dalam penyelenggaraan Tournament Esports yang tidak
+              hanya mendorong prestasi tetapi juga mendukung visi pemerintah
+              dalam memajukan industri Esports.
+            </p>
+            <a
+              href="https://www.instagram.com/smqresports"
+              style="
+                display: inline-block;
+                background: linear-gradient(90deg, #ff0000, #000000);
+                color: #fff;
+                padding: 12px 28px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+                transition: all 0.3s;
+              "
+              onmouseover="this.style.boxShadow='0 0 25px rgba(0,212,255,0.9)'; this.style.transform='scale(1.05)'"
+              onmouseout="this.style.boxShadow='0 0 15px rgba(0,212,255,0.5)'; this.style.transform='scale(1)'"
+            >
+              🚀 Klik IG untuk Bergabung
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Achievements Section -->
-    <section class="achievements" id="achievements">
+    <section
+      class="achievements"
+      id="achievements"
+      style="
+        position: relative;
+        z-index: 2;
+        padding: 60px 20px;
+        text-align: center;
+        border-radius: 20px;
+        overflow: hidden;
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url('./tencent.jpeg') left center / cover no-repeat,
+          url('./montoon.jpeg') right center / cover no-repeat;
+        background-blend-mode: overlay;
+      "
+    >
       <h2 class="heading">ACHIEVEMENTS SMQR Esports</h2>
       <div class="achievements-container">
         <div class="achievements-box">
           <img src="./trans7.jpeg" alt="Trans 7 Esports" />
           <div class="achievements-layer">
-            Tournament Nasional Battle Royale Trans 7 Esports
+            Tournament Nasional Battle Royale Trans 7 Esports Tahun 2023
           </div>
         </div>
         <div class="achievements-box">
@@ -391,7 +573,9 @@
       id="teams"
       style="position: relative; overflow: hidden"
     >
-      <h2 class="heading" style="position: relative; z-index: 2">TEAMS SMQR Esports</h2>
+      <h2 class="heading" style="position: relative; z-index: 2">
+        TEAMS SMQR Esports
+      </h2>
       <!-- Video background -->
       <video
         autoplay
@@ -564,6 +748,7 @@
     <!-- Hall of Fame -->
     <div
       class="heading"
+      id="halloffame"
       style="
         margin-bottom: 20px;
         background-image: url('./first.jpeg');
@@ -599,64 +784,171 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-sponsor">
-        <h1 style="color: #ffffff">Partners</h1>
-        <h2 style="color: #ffffff">#majulahsmqr</h2>
-        
+    <footer
+      style="
+        background: linear-gradient(135deg, #ffffff, #ffffff, #ffffff);
+        padding: 50px 20px;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 30px;
+        "
+      >
+        <h1
+          style="font-size: 2em; letter-spacing: 1px; color: #ff0000; margin: 0"
+        >
+          Partners
+        </h1>
+        <h2
+          style="
+            font-size: 1.2em;
+            font-weight: 500;
+            color: #000000;
+            text-transform: uppercase;
+            margin: 0;
+          "
+        >
+          #majulahsmqr
+        </h2>
       </div>
-      <div class="footer-sponsor">
-        
-        <a href="https://www.instagram.com/desapedia.official">
-          <img src="./desapedia.jpeg" alt="Desapedia" />
-          <h3 style="color: #ffffff">Desapedia</h3>
-        </a>
-        
-      <div class="footer-sponsor">
-        
-        <a href="https://www.instagram.com/floriglitz.id">
-          <img src="./floriglitz.jpeg" alt="Floriglitz" />
-          <h3 style="color: #ffffff">Floriglitz</h3>
-        </a>
-      
-      <div class="footer-iconTop" style="color: #ffffff">
-        
-       <a href="#home" class="scroll-top"> 
- <i class="bx bx-chevron-up"></i>
-</a>
 
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 30px;
+          margin-bottom: 40px;
+        "
+      >
+        <a
+          href="https://www.instagram.com/desapedia.official"
+          style="
+            text-decoration: none;
+            color: #000000;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+          "
+          onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 0 15px #ffcc00';"
+          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
+        >
+          <img
+            src="./desapedia.jpeg"
+            alt="Desapedia"
+            style="
+              width: 90px;
+              height: 90px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
+          />
+          <h3 style="margin-top: 10px; font-size: 1em">Desapedia</h3>
+        </a>
 
+        <a
+          href="https://www.instagram.com/floriglitz.id"
+          style="
+            text-decoration: none;
+            color: #000000;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+          "
+          onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 0 15px #ff66ff';"
+          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';"
+        >
+          <img
+            src="./floriglitz.jpeg"
+            alt="Floriglitz"
+            style="
+              width: 90px;
+              height: 90px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
+          />
+          <h3 style="margin-top: 10px; font-size: 1em">Floriglitz</h3>
+        </a>
       </div>
+
+      <div
+        style="
+          position: absolute;
+          bottom: 15px;
+          right: 20px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(5px);
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        "
+        onmouseover="this.style.background='rgba(255,255,255,0.25)'; this.style.transform='translateY(-4px)';"
+        onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)';"
+      ></div>
+      <div>
+        <a
+          href="#home"
+          class="scroll-top"
+          style="color: #ff0000; font-size: 1.8em"
+        >
+          <i class="bx bx-chevron-up"></i>
+        </a>
+      </div>
+
+      <p
+        style="
+          font-size: 0.9em;
+          color: #000000;
+          margin-top: 60px;
+          letter-spacing: 0.5px;
+        "
+      >
+        Copyright © 2019 All Right Reserved. SMQR Esports
+      </p>
     </footer>
 
-   <script>
-  // Zoom gambar event SMQR dengan double click
-  function zoomImage(img) {
-    // Hapus zoom lain jika ada
-    document.querySelectorAll(".img-container.zoomed").forEach(function (z) {
-      z.classList.remove("zoomed");
-    });
+    <script>
+      // Zoom gambar event SMQR dengan double click
+      function zoomImage(img) {
+        // Hapus zoom lain jika ada
+        document
+          .querySelectorAll(".img-container.zoomed")
+          .forEach(function (z) {
+            z.classList.remove("zoomed");
+          });
 
-    // Zoom container
-    var container = img.closest(".img-container");
-    container.classList.add("zoomed");
+        // Zoom container
+        var container = img.closest(".img-container");
+        container.classList.add("zoomed");
 
-    // Tutup zoom jika klik di luar gambar
-    function closeZoom(e) {
-      if (!container.contains(e.target)) {
-        container.classList.remove("zoomed");
-        document.removeEventListener("mousedown", closeZoom);
-        document.removeEventListener("touchstart", closeZoom);
+        // Tutup zoom jika klik di luar gambar
+        function closeZoom(e) {
+          if (!container.contains(e.target)) {
+            container.classList.remove("zoomed");
+            document.removeEventListener("mousedown", closeZoom);
+            document.removeEventListener("touchstart", closeZoom);
+          }
+        }
+
+        // Tambahkan event listener untuk menutup zoom
+        setTimeout(function () {
+          document.addEventListener("mousedown", closeZoom);
+          document.addEventListener("touchstart", closeZoom);
+        }, 10);
       }
-    }
-
-    // Tambahkan event listener untuk menutup zoom
-    setTimeout(function () {
-      document.addEventListener("mousedown", closeZoom);
-      document.addEventListener("touchstart", closeZoom);
-    }, 10);
-  }
-</script>
-
+    </script>
   </body>
 </html>
