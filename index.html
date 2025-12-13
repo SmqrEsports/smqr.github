@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SMQR Esports - Tim esport profesional Indonesia. Turnamen, teams, partnership, dan recruiting." />
+    <meta name="theme-color" content="#181818" />
     <title>SMQR Esports - Official Website</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="favicon.png" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -31,13 +33,14 @@
         />
         <span>SMQR Esports</span>
       </div>
-      <div class="maju"></div>
+      <div class="maju" aria-hidden="true"></div>
 
       <!-- Tombol hamburger -->
-      <button id="hamburger" class="hamburger">&#9776;</button>
+      <button id="hamburger" class="hamburger" aria-label="Open menu">&#9776;</button>
 
       <!-- Navbar -->
-      <nav class="navbar" id="navbar">
+      <nav class="navbar" id="navbar" aria-label="Primary">
+        <button id="closeBtn" class="close-btn" aria-label="Close menu">&times;</button>
         <span style="font-size: 11px; color: #ccc; letter-spacing: 0.5px">
           Website Resmi SMQR Esports &copy; 2019
         </span>
@@ -66,29 +69,8 @@
         </div>
       </nav>
     </header>
-
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const navbar = document.getElementById("navbar");
-      const closeBtn = document.getElementById("closeBtn");
-
-      // Tombol hamburger: toggle buka/tutup menu
-      hamburger.addEventListener("click", () => {
-        navbar.classList.toggle("show");
-      });
-
-      // Tombol X: tutup menu
-      closeBtn.addEventListener("click", () => {
-        navbar.classList.remove("show");
-      });
-    </script>
-
     <!-- Home Section -->
-    <section
-      class="home"
-      id="home"
-      style="position: relative; overflow: hidden"
-    >
+    <section class="home" id="home">
       <!-- Video background -->
       <video
         autoplay
@@ -121,7 +103,7 @@
           z-index: 1;
         "
       ></div>
-      <div style="position: relative; z-index: 2">
+      <div class="home-inner">
         <div class="home-content">
           <h3>SELAMAT DATANG DI</h3>
           <h1>SMQR ESPORTS</h1>
@@ -147,7 +129,7 @@
     </section>
 
     <!-- Commitment Section -->
-    <section id="commitment" style="position: relative; overflow: hidden">
+    <section id="commitment" class="commitment">
       <!-- Video background -->
 
       <!-- Overlay gradient agar teks tetap terbaca, dibuat lebih transparan -->
@@ -162,28 +144,9 @@
           z-index: 1;
         "
       ></div>
-      <div
-        style="
-          position: relative;
-          z-index: 2;
-          padding: 60px 20px;
-          text-align: center;
-          background: url('./mall.jpeg') center/cover no-repeat;
-          border-radius: 20px;
-          overflow: hidden;
-        "
-      >
-        <div
-          style="
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.75);
-
-            z-index: 1;
-          "
-        ></div>
-
-        <div style="position: relative; z-index: 2">
+      <div class="commitment-inner">
+        <div class="commitment-overlay" aria-hidden="true"></div>
+        <div class="commitment-body">
           <h2
             style="
               color: #fff;
@@ -354,18 +317,25 @@
               onmouseover="this.style.transform='scale(1.06)'"
               onmouseout="this.style.transform='scale(1)'"
             />
+            <img
+              src="./penutupseasons1.jpg"
+              alt=""
+              style="
+                width: 100%;
+                max-width: 240px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+                transition: transform 0.3s;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.06)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
           </div>
 
-          <div
-            style="
-              max-width: 700px;
-              margin: 40px auto 0;
-              color: #f0f0f0;
-              font-weight: 500;
-              line-height: 1.6;
-              font-size: 1rem;
-            "
-          >
+          <div class="commitment-text">
             <p style="margin-bottom: 30px">
               Komitmen kami adalah untuk terus mendukung dan memajukan komunitas
               Esports dengan fokus pada pembinaan bakat-bakat muda. Kami secara
@@ -373,51 +343,14 @@
               hanya mendorong prestasi tetapi juga mendukung visi pemerintah
               dalam memajukan industri Esports.
             </p>
-            <a
-              href="https://www.instagram.com/smqresports"
-              style="
-                display: inline-block;
-                background: linear-gradient(90deg, #ff0000, #000000);
-                color: #fff;
-                padding: 12px 28px;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: 600;
-                letter-spacing: 0.5px;
-                box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-                transition: all 0.3s;
-              "
-              onmouseover="this.style.boxShadow='0 0 25px rgba(0,212,255,0.9)'; this.style.transform='scale(1.05)'"
-              onmouseout="this.style.boxShadow='0 0 15px rgba(0,212,255,0.5)'; this.style.transform='scale(1)'"
-            >
-              🚀 Klik IG untuk Bergabung
-            </a>
+            <a href="https://www.instagram.com/smqresports" class="btn btn-primary" rel="noopener" target="_blank">🚀 Klik IG untuk Bergabung</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Achievements Section -->
-    <section
-      class="achievements"
-      id="achievements"
-      style="
-        position: relative;
-        z-index: 2;
-        padding: 60px 20px;
-        text-align: center;
-        border-radius: 20px;
-        overflow: hidden;
-        background: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)
-          ),
-          url('./tencent.jpeg') left center / cover no-repeat,
-          url('./montoon.jpeg') right center / cover no-repeat;
-        background-blend-mode: overlay;
-      "
-    >
+    <section class="achievements" id="achievements">
       <h2 class="heading">ACHIEVEMENTS SMQR Esports</h2>
       <div class="achievements-container">
         <div class="achievements-box">
@@ -489,19 +422,9 @@
     </section>
 
     <!-- Events Section -->
-    <section
-      class="event"
-      id="event"
-      style="
-        position: relative;
-        overflow: hidden;
-        background: url('./bertaji cup.jpeg') center center/cover no-repeat;
-      "
-    >
-      <h2 class="heading" style="position: relative; z-index: 2">
-        EVENTS SMQR Esports
-      </h2>
-      <div class="event-img" style="position: relative; z-index: 2">
+    <section class="event" id="event">
+      <h2 class="heading">EVENTS SMQR Esports</h2>
+      <div class="event-img">
         <div class="img-container" data-year="2022">
           <img src="./TOUR 1.jpeg" alt="Tour 1" ondblclick="zoomImage(this)" />
           <div class="event-caption">Event Tahun 2022</div>
@@ -524,49 +447,12 @@
         </div>
         <div class="img-container" data-year="2025">
           <img src="./les32.jpeg" alt="Les 32" ondblclick="zoomImage(this)" />
-          <div class="event-caption">Event Tahun 2025</div>
+          <div class="event-caption">Event Tahun 2025 - Sekarang</div>
         </div>
       </div>
-      <!-- Optional: Overlay agar teks tetap terbaca -->
-      <div
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(24, 24, 24, 0.55);
-          z-index: 1;
-        "
-      ></div>
+      <div class="event-overlay" aria-hidden="true"></div>
     </section>
-
-    <script>
-      // Zoom gambar event SMQR dengan double click
-      function zoomImage(img) {
-        // Hapus zoom lain jika ada
-        document
-          .querySelectorAll(".img-container.zoomed")
-          .forEach(function (z) {
-            z.classList.remove("zoomed");
-          });
-        // Zoom container
-        var container = img.closest(".img-container");
-        container.classList.add("zoomed");
-        // Tutup zoom jika klik di luar gambar
-        function closeZoom(e) {
-          if (!container.contains(e.target)) {
-            container.classList.remove("zoomed");
-            document.removeEventListener("mousedown", closeZoom);
-            document.removeEventListener("touchstart", closeZoom);
-          }
-        }
-        setTimeout(function () {
-          document.addEventListener("mousedown", closeZoom);
-          document.addEventListener("touchstart", closeZoom);
-        }, 10);
-      }
-    </script>
+    
 
     <section
       class="teams"
@@ -649,24 +535,11 @@
       >
         NEWS SMQR Esports
       </h2>
-      <div
-        class="recruitment-container"
-        style="
-          color: #111;
-          text-shadow: 1px 1px 2px #f80000, -1px -1px 2px #ff0000;
-        "
-      >
+      <div class="recruitment-container">
         <div class="recruitment-header">
           <h1 class="recruitment-title">OPEN PARTNERSHIP</h1>
           <div class="recruitment-divider"></div>
-          <h2
-            style="
-              color: white;
-              font-size: 24px;
-              font-weight: bold;
-              margin-top: 10px;
-            "
-          >
+          <h2 class="recruitment-lead">
             Kami membuka peluang kerjasama dengan brand dan sponsor yang ingin
             mendukung perkembangan esports Indonesia. Bersama SMQR Esports, mari
             kita wujudkan masa depan esports yang lebih cerah.
@@ -675,26 +548,8 @@
         <div class="recruitment-header">
           <h1 class="recruitment-title">OPEN RECRUITMENT</h1>
           <div class="recruitment-divider"></div>
-          <h2
-            style="
-              color: white;
-              font-size: 24px;
-              font-weight: bold;
-              margin-top: 10px;
-            "
-          >
-            DIVISI Battle Royale
-          </h2>
-          <h3
-            style="
-              color: white;
-              font-size: 20px;
-              font-weight: bold;
-              margin-top: 5px;
-            "
-          >
-            PUBG Mobile
-          </h3>
+          <h2 class="recruitment-lead">DIVISI Battle Royale</h2>
+          <h3 class="recruitment-sub">PUBG Mobile</h3>
         </div>
         <div class="recruitment-content">
           <div class="recruitment-card">
@@ -731,16 +586,8 @@
           </div>
         </div>
         <div class="recruitment-footer">
-          <p style="color: white; font-size: 18px; margin-bottom: 20px">
-            Bergabunglah bersama kami dan wujudkan impianmu menjadi atlet
-            esports profesional!
-          </p>
-          <a
-            href="https://www.instagram.com/smqresports"
-            class="recruitment-button"
-          >
-            <i class="bx bxl-instagram"></i> @smqresports
-          </a>
+          <p class="recruitment-cta">Bergabunglah bersama kami dan wujudkan impianmu menjadi atlet esports profesional!</p>
+          <a href="https://www.instagram.com/smqresports" class="recruitment-button" rel="noopener" target="_blank"><i class="bx bxl-instagram"></i> @smqresports</a>
         </div>
       </div>
     </section>
@@ -767,16 +614,22 @@
         Sejarah Kepengurusan SMQR Esports dari masa ke masa
       </h3>
       <img
-        src="./smqrpengurus.jpeg"
+        src="./smqrpengurus1.png"
         alt="pengurus smqr"
         style="max-width: 100%; height: auto"
       />
       <img
-        src="./smqrpengurus1.jpeg"
+        src="./smqrpengurus2.png"
         alt="pengurus smqr"
         style="max-width: 100%; height: auto"
       />
-      
+       <img
+        src="./smqrpengurus3.png"
+        alt="pengurus smqr"
+        style="max-width: 100%; height: auto"
+      />
+     
+     
     </div>
 
     <!-- Footer -->
@@ -917,34 +770,93 @@
     </footer>
 
     <script>
-      // Zoom gambar event SMQR dengan double click
-      function zoomImage(img) {
-        // Hapus zoom lain jika ada
-        document
-          .querySelectorAll(".img-container.zoomed")
-          .forEach(function (z) {
-            z.classList.remove("zoomed");
-          });
+      (function () {
+        // Safe DOM refs
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('navbar');
+        const closeBtn = document.getElementById('closeBtn');
+        const scrollTop = document.querySelector('.scroll-top');
 
-        // Zoom container
-        var container = img.closest(".img-container");
-        container.classList.add("zoomed");
-
-        // Tutup zoom jika klik di luar gambar
-        function closeZoom(e) {
-          if (!container.contains(e.target)) {
-            container.classList.remove("zoomed");
-            document.removeEventListener("mousedown", closeZoom);
-            document.removeEventListener("touchstart", closeZoom);
-          }
+        // Toggle navbar
+        if (hamburger && navbar) {
+          hamburger.addEventListener('click', () => navbar.classList.toggle('show'));
+        }
+        if (closeBtn && navbar) {
+          closeBtn.addEventListener('click', () => navbar.classList.remove('show'));
         }
 
-        // Tambahkan event listener untuk menutup zoom
-        setTimeout(function () {
-          document.addEventListener("mousedown", closeZoom);
-          document.addEventListener("touchstart", closeZoom);
-        }, 10);
-      }
+        // Close menu / lightbox on Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            navbar && navbar.classList.remove('show');
+            document.querySelectorAll('.img-container.zoomed').forEach(z => z.classList.remove('zoomed'));
+            document.body.classList.remove('no-scroll');
+          }
+        });
+
+        // Scroll to top button
+        if (scrollTop) {
+          scrollTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+
+        // Pause background videos on small devices to save bandwidth
+        function handleVideoPlayback() {
+          const videos = document.querySelectorAll('video');
+          const small = window.matchMedia('(max-width: 720px)').matches;
+          videos.forEach(v => {
+            try {
+              if (small) { v.pause(); } else { v.play().catch(()=>{}); }
+            } catch (e) {}
+          });
+        }
+        handleVideoPlayback();
+        window.addEventListener('resize', handleVideoPlayback);
+
+        // Lightbox / zoom for event images
+        window.zoomImage = function (img) {
+          if (!img) return;
+          // close any other zoom
+          document.querySelectorAll('.img-container.zoomed').forEach(z => z.classList.remove('zoomed'));
+          const container = img.closest('.img-container');
+          if (!container) return;
+          // lock body scroll while zoomed
+          document.body.classList.add('no-scroll');
+          container.classList.add('zoomed');
+
+          function closeZoom(e) {
+            // close when clicking/tapping outside the container's image
+            if (!container.contains(e.target)) {
+              container.classList.remove('zoomed');
+              document.body.classList.remove('no-scroll');
+              document.removeEventListener('mousedown', closeZoom);
+              document.removeEventListener('touchstart', closeZoom);
+            }
+          }
+          setTimeout(() => {
+            document.addEventListener('mousedown', closeZoom);
+            document.addEventListener('touchstart', closeZoom);
+          }, 10);
+        };
+
+        // Make anchor links smooth
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+          a.addEventListener('click', (e) => {
+            const href = a.getAttribute('href');
+            if (href === '#' || href === '') return;
+            if (href.startsWith('#')) {
+              const target = document.querySelector(href);
+              if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                navbar && navbar.classList.remove('show');
+              }
+            }
+          });
+        });
+      })();
     </script>
   </body>
 </html>
