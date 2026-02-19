@@ -602,6 +602,8 @@ body {
   margin-top: 6px;
 }
 
+
+
 /* News & Recruitment */
 .news {
   padding: 40px 5vw;
@@ -745,7 +747,7 @@ body {
 .event {
   background: url('./cover hall.jpeg') center center/cover no-repeat !important;
   position: relative;
-  padding: 60px 5vw;
+  padding: 20px 5vw;
 }
 
 .event-img {
@@ -786,17 +788,89 @@ body {
 .img-container .event-caption {
   color: var(--accent);
   font-weight: 800;
-  font-size: 0.98rem;
-  margin: 8px 0 6px;
+  font-size: 0.9rem;
+  margin: 0;
   text-align: center;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.4px;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 10px 12px;
+  padding: 2px 80px; /* diperkecil */
   background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
 }
+
+/* MOBILE ZERO GAP - Tinggi Gambar MAX */
+@media screen and (max-width: 768px) {
+  .event {
+    padding: 2.5rem 0 !important; /* ↑ Extra space atas */
+    margin: 0 !important;
+    width: 100vw !important;
+  }
+
+  .heading {
+    margin: 1.5rem 0 0.75rem 0 !important; /* ↑ Lebih longgar */
+    padding: 0 1rem !important;
+    font-size: 1.75rem !important;
+  }
+
+  .event-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    left: calc(-50vw + 50%) !important;
+  }
+
+  .img-container {
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 320px !important; /* ↑ DARI 280px KE 320px */
+    border-radius: 0 !important;
+    position: relative !important;
+  }
+
+  .img-container + .img-container {
+    margin-top: -4px !important;
+  }
+
+  .img-container img {
+    width: 100vw !important;
+    height: 320px !important; /* ↑ DARI 280px KE 320px */
+    object-fit: cover !important;
+  }
+
+  .event-caption {
+    padding: 6px 10px !important; /* ↑ Ruang lebih besar */
+    font-size: 0.9rem !important;
+    bottom: 0 !important;
+    min-height: 28px !important; /* ↑ Ruang judul lebih besar */
+  }
+}
+
+/* IPHONE 14/15 + SAMSUNG S25 ULTRA */
+@media screen and (max-width: 428px) {
+  .img-container {
+    height: 300px !important; /* ↑ DARI 260px KE 300px */
+  }
+  
+  .img-container img {
+    height: 300px !important; /* ↑ DARI 260px KE 300px */
+  }
+  
+  .event-caption {
+    padding: 7px 12px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+
+
+
 .img-container:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 18px 50px rgba(0,0,0,0.55);
@@ -862,7 +936,7 @@ body {
   .home-img { justify-content: center; }
   .achievements-container { grid-template-columns: 1fr; }
   .teams-list { flex-direction: column; gap: 20px; }
-  .event-img { gap: 14px; }
+  
   .img-container img { height: 110px; }
 }
 @media (max-width: 600px) {
@@ -874,11 +948,7 @@ body {
  
   .home-content h1 { font-size: 2rem; }
   .footer { padding: 30px 2vw 10px; }
-  .event-img {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+  
   .img-container {
     max-width: 98vw;
   }
