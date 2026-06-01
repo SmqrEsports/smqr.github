@@ -250,6 +250,15 @@
   <!-- Events Section -->
   <section class="event" id="event">
     <h2 class="heading" >EVENTS</h2>
+    <div class="event-search-wrapper">
+      <input id="eventSearchInput" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="Cari event tahun, misal 2022..." aria-label="Cari event" />
+      <p id="eventSearchNotice" class="event-notice" hidden>Tidak ada event untuk kata kunci tersebut.</p>
+    </div>
+    <div class="event-slider-controls">
+      <button type="button" class="event-prev" aria-label="Sebelumnya">‹</button>
+      <span class="event-page-label">Tahun 2022</span>
+      <button type="button" class="event-next" aria-label="Selanjutnya">›</button>
+    </div>
     <div class="event-img">
       <div class="img-container" data-year="2022">
         <img src="./TOUR 1.jpeg" alt="Tour 1" ondblclick="zoomImage(this)" />
@@ -275,7 +284,7 @@
         <img src="./les32.jpeg" alt="Les 32" ondblclick="zoomImage(this)" />
         <div class="event-caption">Event Tahun 2025 - Sekarang</div>
       </div>
-      <div class="img-container" data-year="2024">
+      <div class="img-container" data-year="2026">
         <img src="./TOUR 7.jpeg" alt="Tour 7" ondblclick="zoomImage(this)" />
         <div class="event-caption">Event Tahun 2026</div>
       </div>
@@ -630,15 +639,33 @@ document.addEventListener("touchstart", () => {
         document.body.classList.add('no-scroll');
         container.classList.add('zoomed');
 
+        const existingCloseBtn = container.querySelector('.zoom-close-button');
+        if (existingCloseBtn) {
+          existingCloseBtn.remove();
+        }
+
+        const closeBtn = document.createElement('button');
+        closeBtn.type = 'button';
+        closeBtn.className = 'zoom-close-button';
+        closeBtn.setAttribute('aria-label', 'Tutup gambar');
+        closeBtn.textContent = '×';
+        container.appendChild(closeBtn);
+
+        function closeContainer() {
+          container.classList.remove('zoomed');
+          document.body.classList.remove('no-scroll');
+          closeBtn.remove();
+          document.removeEventListener('mousedown', closeZoom);
+          document.removeEventListener('touchstart', closeZoom);
+        }
+
         function closeZoom(e) {
-          // close when clicking/tapping outside the container's image
           if (!container.contains(e.target)) {
-            container.classList.remove('zoomed');
-            document.body.classList.remove('no-scroll');
-            document.removeEventListener('mousedown', closeZoom);
-            document.removeEventListener('touchstart', closeZoom);
+            closeContainer();
           }
         }
+
+        closeBtn.addEventListener('click', closeContainer);
         setTimeout(() => {
           document.addEventListener('mousedown', closeZoom);
           document.addEventListener('touchstart', closeZoom);
@@ -729,7 +756,115 @@ document.addEventListener("touchstart", () => {
         window.requestAnimationFrame(() => updateTrack());
       }
 
+      function initEventSlider() {
+        const eventSection = document.querySelector('.event');
+        const eventImg = eventSection?.querySelector('.event-img');
+        const rawContainers = eventImg ? Array.from(eventImg.querySelectorAll('.img-container')) : [];
+        if (!eventImg || rawContainers.length === 0) return null;
+
+        const years = [...new Set(rawContainers.map((container) => container.dataset.year).filter(Boolean))];
+        if (years.length === 0) return null;
+
+        const pagesWrapper = document.createElement('div');
+        pagesWrapper.className = 'event-pages';
+
+        const pages = years.map((year) => {
+          const page = document.createElement('div');
+          page.className = 'event-page';
+          page.dataset.year = year;
+          return page;
+        });
+
+        rawContainers.forEach((container) => {
+          const year = container.dataset.year;
+          const targetPage = pages.find((page) => page.dataset.year === year);
+          if (targetPage) {
+            targetPage.appendChild(container);
+          }
+        });
+
+        pages.forEach((page) => pagesWrapper.appendChild(page));
+        eventImg.innerHTML = '';
+        eventImg.appendChild(pagesWrapper);
+
+        const prevBtn = eventSection.querySelector('.event-prev');
+        const nextBtn = eventSection.querySelector('.event-next');
+        const pageLabel = eventSection.querySelector('.event-page-label');
+        let activeIndex = 0;
+
+        function updateSlider(index) {
+          activeIndex = Math.max(0, Math.min(index, pages.length - 1));
+          const page = pages[activeIndex];
+          const offset = page ? page.offsetLeft : 0;
+          pagesWrapper.style.transform = `translateX(-${offset}px)`;
+          pageLabel.textContent = `Tahun ${pages[activeIndex].dataset.year}`;
+          prevBtn.disabled = activeIndex === 0;
+          nextBtn.disabled = activeIndex === pages.length - 1;
+        }
+
+        prevBtn?.addEventListener('click', () => updateSlider(activeIndex - 1));
+        nextBtn?.addEventListener('click', () => updateSlider(activeIndex + 1));
+
+        updateSlider(0);
+
+        return {
+          pages,
+          pagesWrapper,
+          updateSlider,
+          activeIndex: () => activeIndex,
+        };
+      }
+
+      function initEventSearch(slider) {
+        const searchInput = document.getElementById('eventSearchInput');
+        const eventSection = document.querySelector('.event');
+        const notice = document.getElementById('eventSearchNotice');
+        const eventContainers = Array.from(document.querySelectorAll('.event .img-container'));
+        const eventPages = Array.from(document.querySelectorAll('.event .event-page'));
+        if (!searchInput || eventContainers.length === 0) return;
+
+        function filterEvents() {
+          const query = searchInput.value.replace(/[^0-9]/g, '');
+          if (searchInput.value !== query) {
+            searchInput.value = query;
+          }
+          const normalizedQuery = query.trim().toLowerCase();
+          let visiblePageIndex = null;
+          let visibleCount = 0;
+
+          eventPages.forEach((page, index) => {
+            const containers = Array.from(page.querySelectorAll('.img-container'));
+            let pageHasMatch = false;
+
+            containers.forEach((container) => {
+              const year = String(container.dataset.year || '').toLowerCase();
+              const matches = !normalizedQuery || year === normalizedQuery;
+              container.style.display = matches ? 'block' : 'none';
+              if (matches) {
+                pageHasMatch = true;
+                visibleCount += 1;
+              }
+            });
+
+            page.style.display = pageHasMatch ? 'grid' : 'none';
+            if (pageHasMatch && visiblePageIndex === null) {
+              visiblePageIndex = index;
+            }
+          });
+
+          notice.hidden = visibleCount > 0;
+          if (visiblePageIndex !== null && slider) {
+            slider.updateSlider(visiblePageIndex);
+          }
+        }
+
+        searchInput.addEventListener('input', filterEvents);
+        filterEvents();
+      }
+
+      const eventSlider = initEventSlider();
       initCommitmentCarousel();
+      initEventSearch(eventSlider);
     })();
   </script>
 </body>
